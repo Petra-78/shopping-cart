@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useFetchBooks } from "../../hooks/useFetchBooks";
+import QuantitySelector from "../quantity-selector/quantitySelector";
 
 export default function BookPage() {
   const { bookId } = useParams();
@@ -12,12 +13,13 @@ export default function BookPage() {
   return (
     <div>
       <img
-        src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-L.jpg`}
+        src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-M.jpg`}
         alt={book.title}
       />
       <h1>{book.title}</h1>
-      <h2>Describtion</h2>
-      <p>{book.description}</p>
+      <div className="quantitySelector">
+        <QuantitySelector />
+      </div>
     </div>
   );
 }
