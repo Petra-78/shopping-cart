@@ -1,14 +1,13 @@
 import { useParams } from "react-router";
-import { useFetchBooks } from "../../hooks/useFetchBooks";
-import QuantitySelector from "../quantity-selector/quantitySelector";
+import { useBook } from "../../hooks/useBook";
+import QuantitySelector from "../quantity-selector/QuantitySelector";
 
 export default function BookPage() {
   const { bookId } = useParams();
-  const { book, loading, error } = useFetchBooks({ bookId });
+  const { book, loading, error } = useBook(bookId);
 
-  if (loading) return <p>Loading book details...</p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>Failed to load book 😢</p>;
-  if (!book) return <p>Book not found.</p>;
 
   return (
     <div>
@@ -19,6 +18,7 @@ export default function BookPage() {
       <h1>{book.title}</h1>
       <div className="quantitySelector">
         <QuantitySelector />
+        <button>Add to cart</button>
       </div>
     </div>
   );

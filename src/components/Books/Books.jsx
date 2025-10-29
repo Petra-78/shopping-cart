@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import { useFetchBooks } from "../../hooks/useFetchBooks";
+import { useBooks } from "../../hooks/useBooks";
 
 export default function Books() {
-  const { books, loading, error } = useFetchBooks({ limit: 100 });
+  const { books, loading, error } = useBooks();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching books 😢</p>;
