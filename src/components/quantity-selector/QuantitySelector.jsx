@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export default function QuantitySelector() {
-  const [quantity, setQuantity] = useState(1);
-
+export default function QuantitySelector({ quantity, setQuantity }) {
   const handleDecrease = (e) => {
     e.preventDefault();
     setQuantity((prev) => Math.max(1, prev - 1));
