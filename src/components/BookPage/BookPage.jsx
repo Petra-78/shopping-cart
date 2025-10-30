@@ -1,38 +1,58 @@
 import { useParams } from "react-router";
+import { useContext, useState, useEffect } from "react";
 import BooksContext from "../../context/BooksContext";
-import { useState } from "react";
-import { useContext } from "react";
-import QuantitySelector from "../quantity-selector/QuantitySelector";
-import { useEffect } from "react";
 import CartContext from "../../context/CartContext";
+import QuantitySelector from "../quantity-selector/QuantitySelector";
 
 export default function BookPage() {
   const { bookId } = useParams();
   const { books, loading, error } = useContext(BooksContext);
-  const book = books.find((b) => b.key.split("/").pop() === bookId);
-  const [description, setDescription] = useState("");
-  const [cart, setCart] = useContext(CartContext);
+  const [, setCart] = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
+  const [description, setDescription] = useState("");
+  const price = 10.98;
 
-  const handleAddToCart = () => {
-    setCart([...cart, { book: book, quantity: quantity }]);
-  };
+  const book = books.find((b) => b.key.split("/").pop() === bookId);
 
   useEffect(() => {
-    async function fetchDescribtion() {
+    if (!bookId) return;
+
+    async function fetchDescription() {
       try {
         const res = await fetch(`https://openlibrary.org/works/${bookId}.json`);
         const data = await res.json();
-        setDescription(data.description);
+        setDescription(
+          data.description?.value ||
+            data.description ||
+            "No description available."
+        );
       } catch (err) {
         console.error(err);
       }
     }
-    fetchDescribtion();
+
+    fetchDescription();
   }, [bookId]);
 
+  const handleAddToCart = () => {
+    setCart((prevCart) => {
+      const existingIndex = prevCart.findIndex(
+        (item) => item.book.key === book.key
+      );
+
+      if (existingIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingIndex].quantity += quantity;
+        return updatedCart;
+      } else {
+        return [...prevCart, { book, quantity, price }];
+      }
+    });
+  };
+
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Failed to load book 😢</p>;
+  if (error) return <p>Error loading book 😢</p>;
+  if (!book) return <p>Book not found.</p>;
 
   return (
     <div>
@@ -41,22 +61,16 @@ export default function BookPage() {
         alt={book.title}
       />
       <h1>{book.title}</h1>
-      <p>
-        {typeof description === "string"
-          ? description
-          : description?.value || "No description available."}
-      </p>
-      <div className="quantitySelector">
-        <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
-        <button
-          type="button"
-          onClick={() => {
-            handleAddToCart();
-          }}
-        >
-          Add to cart
-        </button>
-      </div>
+      <p>{description}</p>
+
+      <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+      <button
+        onClick={() => {
+          handleAddToCart();
+        }}
+      >
+        Add to cart
+      </button>
     </div>
   );
 }
