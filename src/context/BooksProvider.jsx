@@ -13,7 +13,7 @@ export default function BooksProvider({ children }) {
         const data = await res.json();
 
         const englishBooks = data.works
-          .filter((book) => !book.language || book.language.includes("eng"))
+          .filter((book) => book.language.includes("eng"))
           .slice(0, 100);
 
         setBooks(englishBooks);
