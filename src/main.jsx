@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import routes from "./router.jsx";
 import { BooksProvider } from "./context/BooksContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
+import { QuantityProvider } from "./context/QuantityContext.jsx";
 
 const router = createBrowserRouter(routes);
 
@@ -12,7 +13,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BooksProvider>
       <CartProvider>
-        <RouterProvider router={router} />
+        <QuantityProvider>
+          <RouterProvider router={router} />
+        </QuantityProvider>
       </CartProvider>
     </BooksProvider>
   </StrictMode>
