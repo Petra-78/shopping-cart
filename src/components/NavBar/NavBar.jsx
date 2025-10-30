@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import CartIcon from "../cart-icon/CartIcon";
 
 export default function NavBar() {
   return (
@@ -11,7 +12,7 @@ export default function NavBar() {
           <Link to="shop">Shop</Link>
         </li>
         <li>
-          <Link to="cart">Cart</Link>
+          <CartIcon />
         </li>
       </ul>
     </div>
