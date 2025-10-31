@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useBooks } from "../../hooks/useBooks";
+import styles from "./Books.module.css";
 
 export default function Books() {
   const [, setCart] = useContext(CartContext);
@@ -32,10 +33,11 @@ export default function Books() {
   };
 
   return (
-    <div className="grid">
-      {books.map((book) => (
-        <li key={book.key}>
-          <div className="book">
+    <div className={styles.main}>
+      {" "}
+      <div className={styles.grid}>
+        {books.map((book) => (
+          <div className={styles.book} key={book.key}>
             <Link to={`/books/${book.key.split("/").pop()}`}>
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
@@ -55,8 +57,8 @@ export default function Books() {
               Add to cart
             </button>
           </div>
-        </li>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
