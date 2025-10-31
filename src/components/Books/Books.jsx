@@ -4,6 +4,7 @@ import { useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useBooks } from "../../hooks/useBooks";
 import styles from "./Books.module.css";
+import Loading from "../loading/Loading";
 
 export default function Books() {
   const [, setCart] = useContext(CartContext);
@@ -11,7 +12,7 @@ export default function Books() {
   const { books, loading, error } = useBooks();
   const price = 10.98;
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error fetching books 😢</p>;
 
   const handleAddToCart = (key) => {

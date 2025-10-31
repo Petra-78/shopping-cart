@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+.trendingHeader {
+  text-decoration: underline;
+  color: var(--grey);
+  font-size: 2.5rem;
+}
+
 .cta {
   display: flex;
   flex-direction: column;
@@ -20,6 +26,20 @@
 
 .cta > * {
   color: white;
+}
+
+.cta h1 {
+  margin: 0;
+}
+
+.cta button {
+  background-color: var(--orange);
+  transition: transform 100ms ease-in-out;
+}
+
+.cta button:hover {
+  background-color: var(--orange);
+  transform: scale(1.1);
 }
 
 .trending {

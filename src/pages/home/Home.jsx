@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import BooksContext from "../../context/BooksContext";
 import CartContext from "../../context/CartContext";
 import styles from "./Home.module.css";
+import Loading from "../../components/loading/Loading";
 
 export default function Home() {
   const { books, loading, error } = useContext(BooksContext);
@@ -40,9 +41,9 @@ export default function Home() {
         </Link>
       </div>
       <div className={styles.trending}>
-        <h1>Currently trending reads</h1>
+        <h2 className={styles.trendingHeader}>Currently trending reads</h2>
         <div className={styles.bookDisplay}>
-          {loading && <p>Loading books...</p>}
+          {loading && <Loading />}
           {books.slice(0, 5).map((book) => (
             <div className={styles.book} key={book.key}>
               <Link to={`/books/${book.key.split("/").pop()}`}>
