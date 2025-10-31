@@ -2,10 +2,23 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  box-sizing: border-box;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+
+  --dark-grey: #1b1b1b;
+  --beige: #f3e1d8;
+  --grey: #302823;
+  --orange: #ff6f3c;
+
+  --dark-orange: #914020;
+  --light-grey: #aaaaaa;
+
+  --color-success: #1a6332;
+  --color-error: #83170b;
+  --color-warning: #8f7303;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,18 +28,18 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-text);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-accent);
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  justify-content: center;
   min-height: 100vh;
 }
 
@@ -47,7 +60,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ff6f3c;
 }
 button:focus,
 button:focus-visible {
@@ -60,7 +73,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #ff6f3c;
   }
   button {
     background-color: #f9f9f9;
