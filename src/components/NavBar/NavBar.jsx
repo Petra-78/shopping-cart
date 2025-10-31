@@ -1,26 +1,44 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import CartIcon from "../cart-icon/CartIcon";
 import styles from "./NavBar.module.css";
 
 export default function NavBar() {
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.logo}>
+      <NavLink to="/" className={styles.logo}>
         BookHaven
-      </Link>
+      </NavLink>
       <ul className={styles.navLinks}>
         <li>
-          <Link to="/" className={styles.navLink}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? styles.activeLinks : styles.navLinks
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/shop" className={styles.navLink}>
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              isActive ? styles.activeLinks : styles.navLinks
+            }
+          >
             Shop
-          </Link>
+          </NavLink>
         </li>
+
         <li className={styles.cartWrapper}>
-          <CartIcon />
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive ? styles.activeLinks : styles.navLinks
+            }
+          >
+            <CartIcon />
+          </NavLink>
         </li>
       </ul>
     </nav>

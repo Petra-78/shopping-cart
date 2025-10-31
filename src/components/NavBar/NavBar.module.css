@@ -40,7 +40,7 @@
   position: relative;
   overflow: hidden;
   padding-bottom: 2px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .navLinks a::after {
@@ -55,14 +55,21 @@
   transition: transform 0.3s ease;
 }
 
-.navLinks a:hover,
-.navLinks a:focus {
-  color: var(--grey);
+.navLinks a.activeLinks {
   font-weight: 600;
+  color: var(--grey);
 }
 
-.navLinks a:hover::after,
-.navLinks a:focus::after {
+.navLinks a.activeLinks::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.activeLinks {
+  font-weight: 600;
+  color: var(--grey);
+}
+
+.activeLinks::after {
   transform: translate3d(0, 0, 0);
 }
 
