@@ -4,6 +4,7 @@ import BooksContext from "../../context/BooksContext";
 import CartContext from "../../context/CartContext";
 import styles from "./Home.module.css";
 import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 export default function Home() {
   const { books, loading, error } = useContext(BooksContext);
@@ -11,7 +12,7 @@ export default function Home() {
   const [, setCart] = useContext(CartContext);
 
   const price = 10.98;
-  if (error) return <p>Error fetching books 😢</p>;
+  if (error) return <Error />;
 
   const handleAddToCart = (key) => {
     const bookId = key.split("/").pop();

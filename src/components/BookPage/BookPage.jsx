@@ -5,6 +5,7 @@ import CartContext from "../../context/CartContext";
 import QuantitySelector from "../quantity-selector/QuantitySelector";
 import styles from "./BookPage.module.css";
 import Loading from "../loading/Loading";
+import Error from "../error/Error";
 
 export default function BookPage() {
   const { bookId } = useParams();
@@ -53,7 +54,7 @@ export default function BookPage() {
   };
 
   if (loading) return <Loading />;
-  if (error) return <p>Error loading book 😢</p>;
+  if (error) return <Error />;
   if (!book) return <p>Book not found.</p>;
 
   return (
