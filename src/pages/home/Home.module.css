@@ -35,6 +35,7 @@
 .cta button {
   background-color: var(--orange);
   transition: transform 100ms ease-in-out;
+  color: white;
 }
 
 .cta button:hover {
