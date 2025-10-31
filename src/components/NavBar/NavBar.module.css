@@ -1,10 +1,13 @@
+@import "../../index.css";
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdfcf8;
-  padding: 2rem 2rem;
-  border-bottom: 1px solid #e6e0d8;
+  max-width: 100vw;
+  background-color: var(--beige);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--dark-orange);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -13,7 +16,7 @@
 .logo {
   font-size: 1.7rem;
   font-weight: 600;
-  color: #2e2a24;
+  color: var(--grey);
   text-decoration: none;
   letter-spacing: 0.5px;
 }
@@ -32,7 +35,7 @@
 .navLinks a {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #2e2a24;
+  color: var(--grey);
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -47,14 +50,14 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ff6f3c;
+  background-color: var(--orange);
   transform: translate3d(-100%, 0, 0);
   transition: transform 0.3s ease;
 }
 
 .navLinks a:hover,
 .navLinks a:focus {
-  color: #000000;
+  color: var(--grey);
   font-weight: 600;
 }
 
@@ -62,6 +65,7 @@
 .navLinks a:focus::after {
   transform: translate3d(0, 0, 0);
 }
+
 .cartWrapper {
   position: relative;
   display: flex;
@@ -72,8 +76,8 @@
   position: absolute;
   top: -6px;
   right: -10px;
-  background-color: #d18a47;
-  color: white;
+  background-color: var(--light-grey);
+  color: var(--color-white);
   font-size: 0.7rem;
   font-weight: bold;
   border-radius: 50%;
@@ -82,4 +86,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .navLinks {
+    gap: 10px;
+  }
+  .navbar {
+    flex-direction: column;
+  }
 }
