@@ -3,6 +3,8 @@ import { useContext, useState, useEffect } from "react";
 import BooksContext from "../../context/BooksContext";
 import CartContext from "../../context/CartContext";
 import QuantitySelector from "../quantity-selector/QuantitySelector";
+import styles from "./BookPage.module.css";
+import Loading from "../loading/Loading";
 
 export default function BookPage() {
   const { bookId } = useParams();
@@ -50,27 +52,30 @@ export default function BookPage() {
     });
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error loading book 😢</p>;
   if (!book) return <p>Book not found.</p>;
 
   return (
-    <div>
+    <div className={styles.bookPage}>
       <img
-        src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+        src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
         alt={book.title}
+        className={styles.bookImage}
       />
-      <h1>{book.title}</h1>
-      <p>{description}</p>
-
-      <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
-      <button
-        onClick={() => {
-          handleAddToCart();
-        }}
-      >
-        Add to cart
-      </button>
+      <div className={styles.details}>
+        <h1>{book.title}</h1>
+        <div className={styles.description}>
+          <p>{description}</p>
+        </div>
+        <div className={styles.actionRow}>
+          <span className={styles.price}>${price}</span>
+          <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+        </div>
+        <button className={styles.addToCart} onClick={handleAddToCart}>
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 }
