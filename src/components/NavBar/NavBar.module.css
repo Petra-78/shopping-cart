@@ -14,11 +14,18 @@
 }
 
 .logo {
+  display: flex;
   font-size: 1.7rem;
   font-weight: 600;
   color: var(--grey);
   text-decoration: none;
   letter-spacing: 0.5px;
+  gap: 10px;
+}
+
+.logo img {
+  max-height: 30px;
+  align-self: center;
 }
 
 .navLinks {
