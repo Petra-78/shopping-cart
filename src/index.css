@@ -16,9 +16,9 @@
   --dark-orange: #914020;
   --light-grey: #aaaaaa;
 
-  --color-success: #1a6332;
-  --color-error: #83170b;
-  --color-warning: #8f7303;
+  --green: #1a6332;
+  --red: #83170b;
+  --yellow: #8f7303;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,6 +46,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--grey);
 }
 
 button {
