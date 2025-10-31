@@ -8,6 +8,13 @@ import { Link } from "react-router";
 export default function Cart() {
   const [cart, setCart] = useContext(CartContext);
 
+  const handleCheckout = () => {
+    const message = alert(
+      "Congrats! If this was a real store, now you would be redirected to paying!"
+    );
+    return message;
+  };
+
   const updateQuantity = (index, newQuantity) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity = newQuantity;
@@ -78,7 +85,11 @@ export default function Cart() {
           <h2>Total: ${totalPrice.toFixed(2)}</h2>
           <p>Your taxes and shipping costs will be calculated at checkout.</p>
           <div className={styles.buttons}>
-            <button type="button" className={styles.checkout}>
+            <button
+              type="button"
+              className={styles.checkout}
+              onClick={handleCheckout}
+            >
               Checkout
             </button>
             <h5>or</h5>
