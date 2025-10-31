@@ -1,0 +1,122 @@
+@import "../../index.css";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: calc(-48px - 65.188px);
+  background-image: url(../../assets/bookstore-background.jpg);
+}
+
+.cta > * {
+  color: white;
+}
+
+.trending {
+  padding: 2rem 0px;
+}
+
+.bookDisplay {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 80vw;
+  box-sizing: border-box;
+}
+
+.book {
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  max-height: 200px;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  object-fit: contain;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.book h3 {
+  font-size: 1.2rem;
+  color: var(--grey);
+  margin: 0.5rem 0;
+}
+
+.book p {
+  font-size: 0.95rem;
+  color: var(--light-grey);
+  margin: 0.25rem 0;
+}
+
+.book button {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.book button:hover {
+  background-color: var(--dark-orange);
+}
+
+@media (max-width: 768px) {
+  .bookDisplay {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .book h3 {
+    font-size: 1rem;
+  }
+
+  .book p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookDisplay {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+    gap: 0.8rem;
+  }
+
+  .book {
+    padding: 0.8rem;
+  }
+
+  .book h3 {
+    font-size: 0.95rem;
+  }
+
+  .book p {
+    font-size: 0.8rem;
+  }
+}
