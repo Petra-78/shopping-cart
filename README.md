@@ -3,6 +3,8 @@
 BookHaven is a simple and modern React-based online bookstore that lets users browse books, view details, and manage a shopping cart.  
 It uses data from the [Open Library API](https://openlibrary.org/developers/api) and is styled with modern CSS for a clean, responsive layout.
 
+Check out the live preview: https://bookhaven-onlinestore.netlify.app/
+
 ---
 
 ## Features
