@@ -1,6 +1,6 @@
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import BookPage from "./components/BookPage/BookPage";
 import App from "./App";
 
