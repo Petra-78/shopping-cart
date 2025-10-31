@@ -58,7 +58,7 @@ export default function Cart() {
               <p>{item.book.author_name}</p>
             </div>
 
-            <p>${item.price}</p>
+            <p className={styles.price}>${item.price}</p>
             <QuantitySelector
               quantity={item.quantity}
               setQuantity={(q) => updateQuantity(index, q)}
