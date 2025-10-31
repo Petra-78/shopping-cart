@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import QuantitySelector from "../../components/quantity-selector/QuantitySelector";
 import styles from "./Cart.module.css";
+import cartImg from "../../assets/basket.png";
 import { Link } from "react-router";
 
 export default function Cart() {
@@ -23,7 +24,18 @@ export default function Cart() {
     0
   );
 
-  if (cart.length === 0) return <h2>Your cart is empty.</h2>;
+  if (cart.length === 0)
+    return (
+      <div className={styles.emptyCart}>
+        <div className={styles.header}>
+          <img src={cartImg} alt="cart" />
+          <h1>Im so emptyyy...</h1>
+          <Link to="/shop">
+            <button className={styles.addItems}>Add items</button>
+          </Link>
+        </div>
+      </div>
+    );
 
   return (
     <>
