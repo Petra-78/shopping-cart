@@ -3,3 +3,9 @@
 .title {
   text-decoration: underline;
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+}

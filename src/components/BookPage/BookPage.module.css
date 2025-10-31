@@ -83,6 +83,7 @@
 
   .details {
     align-items: center;
+    grid-column: 1/2;
   }
 
   .bookImage {
@@ -91,5 +92,8 @@
 
   .actionRow {
     justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
   }
 }

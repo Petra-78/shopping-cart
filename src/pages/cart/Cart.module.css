@@ -113,6 +113,7 @@
 .total h5 {
   margin: 5px 0 0 0;
   align-self: center;
+  padding-left: 5px;
 }
 
 .checkout {
@@ -164,6 +165,8 @@
   .cartContainer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
   }
 
   .total {
@@ -190,7 +193,7 @@
     display: none;
   }
   .cartItem img {
-    width: 50px;
+    max-width: 50vw;
   }
   .grid {
     grid-column: 1/-1;
@@ -200,5 +203,17 @@
 
   .price {
     display: none;
+  }
+
+  .cartItem p {
+    font-size: 1.2rem;
+  }
+
+  .grid p {
+    font-size: 1rem;
+  }
+
+  .grid h4 {
+    font-size: 1.2rem;
   }
 }
