@@ -10,7 +10,7 @@
 }
 
 .cartIcon:hover {
-  color: var(--orange);
+  color: var(--dark-orange);
 }
 
 .cartCount {

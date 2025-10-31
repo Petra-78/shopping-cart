@@ -10,7 +10,9 @@ export default function CartIcon() {
   return (
     <Link to="/cart" className={styles.cartIcon}>
       🛒
-      {totalItems > 0 && <span className={styles.cartCount}>{totalItems}</span>}
+      {totalItems >= 0 && (
+        <span className={styles.cartCount}>{totalItems}</span>
+      )}
     </Link>
   );
 }
