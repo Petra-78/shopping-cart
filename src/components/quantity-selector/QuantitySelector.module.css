@@ -1,0 +1,56 @@
+@import "../../index.css";
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  padding: 0.25rem;
+  background-color: var(--beige);
+  width: fit-content;
+}
+
+.button {
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--dark-orange);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+  background-color: var(--orange);
+}
+
+.input {
+  width: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--grey);
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 0.25rem;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--orange);
+}
