@@ -1,0 +1,30 @@
+@import "../../index.css";
+
+.cartIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--grey);
+  text-decoration: none;
+  padding-right: 2rem;
+}
+
+.cartIcon:hover {
+  color: var(--orange);
+}
+
+.cartCount {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  background-color: var(--orange);
+  color: var(--color-white);
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
