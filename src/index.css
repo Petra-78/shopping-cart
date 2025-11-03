@@ -13,7 +13,7 @@
   --orange: #ff6f3c;
 
   --dark-orange: #914020;
-  --light-grey: #aaaaaa;
+  --light-grey: #7e7e7e;
 
   --green: #1a6332;
   --red: #83170b;
@@ -62,6 +62,17 @@ button:focus-visible {
     color: #302823;
     background-color: #ffffff;
   }
+
+  a {
+    color: var(--grey);
+    text-decoration: none;
+  }
+
+  a p {
+    color: var(--light-grey);
+    text-decoration: none;
+  }
+
   a:hover {
     color: #ff6f3c;
   }
