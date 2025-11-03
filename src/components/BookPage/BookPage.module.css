@@ -27,19 +27,16 @@
 
 .details h1 {
   font-size: 2.5rem;
-  color: var(--grey);
   margin-bottom: 0.5rem;
 }
 
 .details p {
   font-size: 1rem;
-  color: var(--grey);
   line-height: 1.6;
 }
 
 .description {
   margin: 1rem 0;
-  background-color: var(--beige);
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid var(--light-grey);
@@ -56,7 +53,6 @@
 .price {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--orange);
 }
 
 .addToCart {

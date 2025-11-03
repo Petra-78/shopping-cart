@@ -43,13 +43,11 @@
 
 .book h3 {
   font-size: 1.1rem;
-  color: var(--dark-grey);
   margin-bottom: 0.4rem;
 }
 
 .book p {
   font-size: 0.9rem;
-  color: var(--grey);
   margin-bottom: 0.3rem;
 }
 

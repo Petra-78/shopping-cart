@@ -9,7 +9,6 @@
 
 .trendingHeader {
   text-decoration: underline;
-  color: var(--grey);
   font-size: 2.5rem;
 }
 
@@ -85,13 +84,11 @@
 
 .book h3 {
   font-size: 1.2rem;
-  color: var(--grey);
   margin: 0.5rem 0;
 }
 
 .book p {
   font-size: 0.95rem;
-  color: var(--light-grey);
   margin: 0.25rem 0;
 }
 
